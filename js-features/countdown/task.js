@@ -14,6 +14,6 @@ function timein() {
 }
 download.href = 'https://mail.ru';
 console.log(download.href);
-download.click()
+download.click();
 
 // timein();
