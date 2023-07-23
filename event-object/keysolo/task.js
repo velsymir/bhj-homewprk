@@ -16,7 +16,9 @@ class Game {
     this.lossElement.textContent = 0;
   }
 
+
   registerEvents() {
+
     /*
       TODO:
       Написать обработчик события, который откликается
@@ -24,16 +26,15 @@ class Game {
       В случае правильного ввода слова вызываем this.success()
       При неправильном вводе символа - this.fail();
      */
-
-
-    // document.addEventListener('keydown', (event) => {
-    //   if(event.key.toLowerCase() === this.currentSymbol.innerHTML) {
-    //     this.success()
-    //   } else {
-    //     this.fail()
-    //   }
-    // })
+     document.addEventListener('keydown', (event) => {
+       if(event.key.toLowerCase() === this.currentSymbol.innerHTML.toLowerCase()) {
+         this.success()
+       } else {
+         this.fail()
+       }
+     })
   }
+
 
   success() {
     this.currentSymbol.classList.add('symbol_correct');
@@ -96,31 +97,24 @@ class Game {
 }
 
 new Game(document.getElementById('game'))
-let key = document.querySelector('.status__time')
-
-// let quiz = document.querySelector('html');
-// function keyPress(event) {
-//   console.log(event)
-// }
-// quiz.addEventListener('keydown', keyPress)
-let b = 1;
-let c = prompt('Time')
-let timer = setTimeout(function delay() {
-  key.innerHTML = b;
-  b++;
-  if(b > c) {
-    clearTimeout(timer)
-    key.innerHTML = 'stop'
-  } else {
-    timer = setTimeout(delay, 1000)
-  }
-}, 1000);
+// let key = document.querySelector('.status__time')
+//
+// let b = 1;
+// let c = prompt('Time')
+// let timer = setTimeout(function delay() {
+//   key.innerHTML = b;
+//   b++;
+//   if(b > c) {
+//     clearTimeout(timer)
+//     key.innerHTML = 'stop'
+//   } else {
+//     timer = setTimeout(delay, 1000)
+//   }
+// }, 1000);
 
 
 
-// let m = setTimeout(() => {
-//   quiz.removeEventListener('keydown', keyPress)
-// }, 3000)
+
 
 // const time = document.querySelector('.status__time')
 // console.log(time)
